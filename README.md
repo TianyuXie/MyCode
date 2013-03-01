@@ -1,3 +1,3 @@
 Overview
 ========
-* Base64 encode/decode
+Base64 encode/decode
