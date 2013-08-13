@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class BubbleSort {
+public class BubbleSortTest {
 	
 	public static <T extends Comparable<T>> void sort(T[] a) {
 		

@@ -1,6 +1,6 @@
 package search;
 
-public class BinarySearch {
+public class BinarySearchTest {
 	
 	public static <T extends Comparable<T>> int binarySearch(T[] a, T key) {
 		
@@ -25,7 +25,7 @@ public class BinarySearch {
 			}
 		}
 		
-		return -(low);
+		return -(low - 1);
 	}
 	
 	public static void main(String[] args) {
