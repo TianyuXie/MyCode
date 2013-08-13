@@ -1,3 +1,5 @@
+package encode;
+
 public class Base64 {
 
 	private static final byte[] STANDARD_ENCODE_TABLE = {
