@@ -32,7 +32,7 @@ public class MergeSortTest {
 		int k = 0;
 		
 		while (i <= mid && j <= to) {
-			if (a[i].compareTo(a[j]) > 0) {
+			if (a[i].compareTo(a[j]) < 0) {
 				tmp[k++] = a[i++];
 			} else {
 				tmp[k++] = a[j++];
@@ -55,16 +55,14 @@ public class MergeSortTest {
 	public static void main(String[] args) {
 		Integer[] array = ArrayUtils.randomGen();
 		
-		for (Integer element : array) {
-			System.out.printf("%d ", element);
+		for (int i = 0; i < array.length; ++i) {
+			System.out.printf(i != array.length - 1 ? "%d " : "%d \n", array[i]);
 		}
-		
-		System.out.println();
 		
 		mergeSort(array);
 	
-		for (Integer element : array) {
-			System.out.printf("%d ", element);
+		for (int i = 0; i < array.length; ++i) {
+			System.out.printf(i != array.length - 1 ? "%d " : "%d \n", array[i]);
 		}
 	}
 }

@@ -23,9 +23,9 @@ public class ArrayUtils {
 		return array;
 	}
 	
-	public static <T> void swap(T[]a, int pos1, int pos2) {
-		T tmp = a[pos1];
-		a[pos1] = a[pos2];
-		a[pos2] = tmp;
+	public static <T> void swap(T[]a, int from, int to) {
+		T tmp = a[from];
+		a[from] = a[to];
+		a[to] = tmp;
 	}
 }
