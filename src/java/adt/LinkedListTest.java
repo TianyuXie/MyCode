@@ -1,6 +1,6 @@
 package adt;
 
-import java.util.Random;
+import util.ArrayUtils;
 
 public class LinkedListTest {
 	
@@ -36,13 +36,13 @@ public class LinkedListTest {
 		
 	}
 	
-	public static Node<Integer> randomGen(int num) {
-		Random random = new Random();
+	public static Node<Integer> randomGen(int range) {
+		Integer[] array = ArrayUtils.randomGen(range);
 
 		Node<Integer> head, currNode, loopNode; 
-		head = new Node<Integer>(random.nextInt(num)); currNode = head;
-		for (int index = 0; index < num; ++index) {
-			loopNode = new Node<Integer>(random.nextInt(num));
+		head = new Node<Integer>(array[0]); currNode = head;
+		for (int i = 1; i < range; ++i) {
+			loopNode = new Node<Integer>(array[i]);
 			currNode.setNext(loopNode);
 			currNode = currNode.getNext();
 		}
