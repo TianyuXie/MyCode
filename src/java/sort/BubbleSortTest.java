@@ -21,12 +21,6 @@ public class BubbleSortTest {
 		}
 	}
 	
-	public static <T> void swap(T[] a, int from, int to) {
-		T tmp = a[from];
-		a[from] = a[to];
-		a[to] = tmp;
-	}
-
 	public static void main(String[] args) {
 		Integer[] array = ArrayUtils.randomGen();
 		
