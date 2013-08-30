@@ -1,0 +1,29 @@
+# Android generate
+bin/
+gen/
+
+# Ant
+build.xml
+local.properties
+
+# Maven
+target/
+pom.xml
+release.properties
+
+# Eclipse
+.classpath
+.project
+.setting/
+.externalToolBuilders/
+
+# IntellJ
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+
+# Mac
+.DS_Store
+
