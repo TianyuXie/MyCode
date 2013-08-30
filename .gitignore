@@ -14,7 +14,7 @@ release.properties
 # Eclipse
 .classpath
 .project
-.setting/
+.settings/
 .externalToolBuilders/
 
 # IntellJ
