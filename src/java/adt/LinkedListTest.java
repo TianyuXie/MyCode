@@ -9,6 +9,10 @@ public class LinkedListTest {
 		private T mData;
 		private Node<T> mNext;
 		
+		public Node() {
+			this(null);
+		}
+		
 		public Node(T data) {
 			this(data, null);
 		}
@@ -53,40 +57,45 @@ public class LinkedListTest {
 	public static <T> Node<T> reverse(Node<T> head) {
 		if (null == head) {
 			return null;
-		} else if (null == head.getNext()) {
-			return head;
 		}
 		
-		Node<T> newHead = new Node<T>(null);
+		Node<T> new_head = new Node<T>();
 		
-		Node<T> curNode, nextNode, loopNode;
-		curNode = head; nextNode = head.getNext(); head.setNext(null);
+		Node<T> node_cur, node_next;
 		
-		while (nextNode != null) {
-			loopNode = nextNode.getNext();
+		new_head.setNext(head);
+		node_cur = head.getNext();
+		
+		while (null != node_cur) {
+			node_next = node_cur.getNext();
 			
-			newHead.setNext(nextNode);
-			nextNode.setNext(curNode);
-			curNode = nextNode;
-			nextNode = loopNode;
+			node_cur.setNext(new_head.getNext());
+			new_head.setNext(node_cur);
+			
+			node_cur = node_next;
 		}
 		
-		return newHead.getNext();
+		head.setNext(null);
+		
+		return new_head.getNext();
+	}
+	
+	public static void print(Node<?> head) {
+		Node<?> ptr = head;
+		do {
+			System.out.printf("%s ", ptr.getData().toString());
+		} while (null != (ptr = ptr.getNext()));
+		
+		System.out.println();
 	}
 	
 	public static void main(String[] args) {
 		Node<Integer> head = randomGen(10);
 		
-		Node<Integer> ptr = head;
-		do {
-			System.out.printf("%d ", ptr.getData());
-		} while(null != (ptr = ptr.getNext()));
+		print(head);
 
-		System.out.println();
-
-		ptr = reverse(head);
-		do {
-			System.out.printf("%d ", ptr.getData());
-		} while(null != (ptr = ptr.getNext()));
+		head = reverse(head);
+		
+		print(head);
 	}
 }
